@@ -25,7 +25,7 @@ const Audio = (props: AudioProps) => {
     if (audioRef.current) {
       const audio = audioRef.current;
 
-      const videoJsInstance = videojs(audio, {
+      const video = videojs(audio, {
         controls: true,
         audioOnlyMode: true,
         fluid: true,
@@ -35,7 +35,9 @@ const Audio = (props: AudioProps) => {
         },
       });
 
-      videoJsRef.current = videoJsInstance;
+      video.audioOnlyMode(true); // call audio only mode without waiting for ready event
+
+      videoJsRef.current = video;
     }
   }, []);
 
