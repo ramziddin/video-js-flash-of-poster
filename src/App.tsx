@@ -26,6 +26,7 @@ const Audio = (props: AudioProps) => {
       const audio = audioRef.current;
 
       const videoJsInstance = videojs(audio, {
+        controls: true,
         audioOnlyMode: true,
         fluid: true,
         sources: {
@@ -40,7 +41,7 @@ const Audio = (props: AudioProps) => {
 
   return (
     <div data-vjs-player>
-      <audio ref={audioRef} {...props} />
+      <audio ref={audioRef} className="video-js" {...props} />
     </div>
   );
 };
