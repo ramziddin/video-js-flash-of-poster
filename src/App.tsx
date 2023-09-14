@@ -26,8 +26,10 @@ const Audio = (props: AudioProps) => {
       const audio = audioRef.current;
 
       const videoJsInstance = videojs(audio, {
+        audioOnlyMode: true,
+        fluid: true,
         sources: {
-          src: 'http://thinkingform.com/wp-content/uploads/2017/09/video-sample-mp4.mp4?_=1',
+          src: 'https://samplelib.com/lib/preview/mp4/sample-5s.mp4',
           type: 'video/mp4',
         },
       });
